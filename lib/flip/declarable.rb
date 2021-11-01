@@ -11,8 +11,10 @@ module Flip
     end
 
     # Adds a strategy for determining feature status.
-    def strategy(strategy)
-      FeatureSet.instance.add_strategy strategy
+    #def strategy(strategy)
+    def strategy(strategy, model_class = nil)
+      FeatureSet.instance.add_strategy strategy, model_class
+      #FeatureSet.instance.add_strategy strategy
     end
 
     # The default response, boolean or a Proc to be called.
